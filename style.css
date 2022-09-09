@@ -183,7 +183,7 @@ header .container nav .main-ul > li:last-child .mega-menu .links{
 
 header .container nav .main-ul > li:last-child .mega-menu .links li a{
     display: block;
-    padding: 10px 0;
+    padding: 10px;
     color: var(--mainColor2);
     font-size: 18px;
     font-weight: 700;
