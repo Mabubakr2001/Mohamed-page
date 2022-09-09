@@ -213,6 +213,10 @@ header .container nav .main-ul > li:last-child .mega-menu .links li a i{
     margin-right: 15px;
 }
 
+header .container nav .main-ul > li:last-child .mega-menu img{
+    width: 47%;
+}
+
 /* Face Section */
 .face{
     height: calc(100vh - 72px);
