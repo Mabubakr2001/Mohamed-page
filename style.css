@@ -600,7 +600,7 @@ header .container nav .main-ul > li:last-child .mega-menu img{
 .features .container .grid-columns--3 .feature .feature-img::after{
     content: "";
     border-style: solid;
-    border-width: 0 0 150px 500px;
+    border-width: 0px 0px 150px 400px;
     border-color: transparent transparent white transparent;
     position: absolute;
     bottom: 0;
@@ -609,7 +609,7 @@ header .container nav .main-ul > li:last-child .mega-menu img{
 }
 
 .features .container .grid-columns--3 .feature:hover .feature-img::after{
-    border-width: 150px 500px 150px 0;
+    border-width: 150px 400px 150px 0;
 }
 
 .features .container .grid-columns--3 .feature .feature-img img{
