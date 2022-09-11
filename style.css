@@ -1013,6 +1013,10 @@ header .container nav .main-ul > li:last-child .mega-menu img{
     }
 
     /* Face Section */
+    .face > a{
+        display: none;
+    }
+
     .face .container{
         display: flex;
         height: 100%;
