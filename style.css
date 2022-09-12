@@ -46,6 +46,7 @@ a{
 
 ::placeholder{
     font-family: 'Cairo', sans-serif;
+    color: grey;
 }
 
 img{
@@ -970,6 +971,108 @@ header .container nav .main-ul > li:last-child .mega-menu img{
     color: gray;
 }
 
+/* Events Section */
+.events .container .events-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.events .container .events-info img{
+    max-width: 450px;
+}
+
+.events .container .events-info .event{
+    flex: 1;
+}
+
+.events .container .events-info .event .event-time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.events .container .events-info .event .event-time div{
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.events .container .events-info .event .event-time div:hover,
+.events .container .events-info .event .event-time div:hover span:first-child{
+    border-color: var(--mainColor2);
+}
+
+.events .container .events-info .event .event-time div:not(:first-child){
+    margin-left: 20px;
+}
+
+.events .container .events-info .event .event-time div span{
+    display: block;
+    text-align: center;
+}
+
+.events .container .events-info .event .event-time div span:first-child{
+    padding: 0 15px;
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--mainColor2);
+    border-bottom: 1px solid rgb(185, 185, 185);
+    transition: .3s;
+}
+
+.events .container .events-info .event .event-time div span:last-child{
+    padding: 0 15px;
+    font-size: 14px;
+}
+
+.events .container .events-info .event .event-info{
+    text-align: center;
+}
+
+.events .container .events-info .event .event-info h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.events .container .events-info .event .event-info p{
+    font-size: 19px;
+    color: grey;
+}
+
+.events .container .subscribe{
+    padding: 30px;
+    border-radius: var(--borderRadius);
+    background-color: var(--subColor2);
+    width: 55%;
+    margin: 50px auto 0;
+    display: flex;
+}
+
+.events .container .subscribe input{
+    padding: 15px 20px;
+    font-size: 17px;
+    border-radius: var(--borderRadius);
+}
+
+.events .container .subscribe input[type="email"]{
+    flex: 1;
+    margin-right: 20px;
+    color: grey;
+}
+
+.events .container .subscribe input[type="submit"]{
+    color: var(--mainColor);
+    background-color: var(--mainColor2);
+    font-weight: 600;
+    transition: .3s;
+}
+
+.events .container .subscribe input[type="submit"]:hover{
+    background-color: #099ee4;
+}
+
 /* Media Queries */
 
 /* Mobiles */
@@ -1064,6 +1167,38 @@ header .container nav .main-ul > li:last-child .mega-menu img{
     .how-it--works .container .work-info .businesses .business .business-info{
         text-align: center;
     }
+
+    /* Events Section */
+    .events .container .events-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .events .container .events-info img{
+        max-width: 95%;
+    }
+
+    .events .container .subscribe{
+        padding: 30px;
+        border-radius: var(--borderRadius);
+        background-color: var(--subColor2);
+        width: 100%;
+        margin: 50px auto 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .events .container .subscribe input[type="email"]{
+        margin: 0 0 20px;
+        width: 100%;
+    }
+
+    .events .container .subscribe input[type="submit"]{
+        width: 40%;
+        margin: 0 auto;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px){
@@ -1071,6 +1206,32 @@ header .container nav .main-ul > li:last-child .mega-menu img{
     .skills .container .skills-content{
         display: flex;
         flex-direction: column;
+    }
+
+    /* Events Section */
+    .events .container .events-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .events .container .events-info img{
+        max-width: 100%;
+    }
+
+    .events .container .subscribe{
+        padding: 30px;
+        border-radius: var(--borderRadius);
+        background-color: var(--subColor2);
+        width: 100%;
+        margin: 50px auto 0;
+        display: flex;
+    }
+
+    .events .container .subscribe input[type="email"]{
+        margin-right:20px;
+        width: 100%;
     }
 }
 
