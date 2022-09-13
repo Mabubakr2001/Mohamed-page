@@ -59,3 +59,27 @@ var myCounter = setInterval(() => {
     }
 
 }, 1000);
+
+
+var statesSection = document.querySelector(".stats");
+var allNumbers = document.querySelectorAll(".state .number");
+var functionStarted = false; // The function doesn't start yet
+
+function startCount(number){
+    var targetNumber = number.dataset.target;
+    var counter = setInterval(() => {
+        number.textContent++;
+        if (number.textContent === targetNumber) {
+            clearInterval(counter)
+        };
+    }, 2000 / targetNumber);
+};
+
+window.onscroll = function () {
+    if (window.scrollY >= statesSection.offsetTop - 2){
+        if (!functionStarted) {
+            allNumbers.forEach(number => startCount(number));
+        }
+        functionStarted = true;
+    };
+};
