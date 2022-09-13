@@ -573,21 +573,21 @@
                     <img src="images/events.png" alt="">
                     <div class="event">
                         <div class="event-time">
-                            <div>
+                            <div class="unit">
                                 <span class="days"></span>
-                                <span>Days</span>
+                                <h2>Days</h2>
                             </div>
-                            <div>
+                            <div class="unit">
                                 <span class="hours"></span>
-                                <span>Hours</span>
+                                <h2>Hours</h2>
                             </div>
-                            <div>
+                            <div class="unit">
                                 <span class="minutes"></span>
-                                <span>Minutes</span>
+                                <h2>Minutes</h2>
                             </div>
-                            <div>
+                            <div class="unit">
                                 <span class="seconds"></span>
-                                <span>Seconds</span>
+                                <h2>Seconds</h2>
                             </div>
                         </div>
                         <div class="event-info">
@@ -600,6 +600,140 @@
                     <input type="email" name="email" placeholder="Enter Your Email" autocomplete="off" style="caret-color: var(--mainColor2);">
                     <input type="submit" value="Subscribe">
                 </form>
+            </article>
+        </section>
+
+        <!-- Plans Section -->
+        <section class="plans" id="plans" style="padding: var(--sectionPadding); background-color: var(--subColor2);">
+            <article class="container">
+                <span class="main-title">Pricing Plans</span>
+                <div class="grid-columns--3">
+                    <div class="pricing-plan">
+                        <div class="plan-info">
+                            <h2>Basic</h2>
+                            <img src="images/hosting-basic.png" alt="">
+                            <span>$15</span>
+                            <span>Per Month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i>10GB HDD Space</li>
+                            <li><i class="fa-solid fa-check"></i>5 Email Addresses</li>
+                            <li><i class="fa-solid fa-check"></i>2 Subdomains</li>
+                            <li><i class="fa-solid fa-check"></i>4 Databases</li>
+                            <li><i class="fa-solid fa-check"></i>Basic Support</li>
+                        </ul>
+                        <a href="#">Choose Plan</a>
+                    </div>
+                    <div class="pricing-plan premium">
+                        <div class="plan-info popular">
+                            <h2>Premium</h2>
+                            <img src="images/hosting-advanced.png" alt="">
+                            <span>$25</span>
+                            <span>Per Month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i>20GB HDD Space</li>
+                            <li><i class="fa-solid fa-check"></i>10 Email Addresses</li>
+                            <li><i class="fa-solid fa-check"></i>5 Subdomains</li>
+                            <li><i class="fa-solid fa-check"></i>8 Databases</li>
+                            <li><i class="fa-solid fa-check"></i>Premium Support</li>
+                        </ul>
+                        <a href="#">Choose Plan</a>
+                    </div>
+                    <div class="pricing-plan">
+                        <div class="plan-info">
+                            <h2>Platinum</h2>
+                            <img src="images/hosting-professional.png" alt="">
+                            <span>$35</span>
+                            <span>Per Month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-check"></i>50GB HDD Space</li>
+                            <li><i class="fa-solid fa-check"></i>20 Email Addresses</li>
+                            <li><i class="fa-solid fa-check"></i>10 Subdomains</li>
+                            <li><i class="fa-solid fa-check"></i>20 Databases</li>
+                            <li><i class="fa-solid fa-check"></i>Platinum Support</li>
+                        </ul>
+                        <a href="#">Choose Plan</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Videos Section -->
+        <section class="videos" id="videos" style="padding: var(--sectionPadding);">
+            <article class="container">
+                <span class="main-title">Top Videos</span>
+                <div class="top-videos">
+                    <div class="videos-info">
+                        <div class="video-name">
+                            <span>Top Videos</span>
+                            <i class="fa-solid fa-shuffle"></i>
+                        </div>
+                        <ul>
+                            <li>
+                                How To Create Sub Domain
+                                <span>05:18</span>
+                            </li>
+                            <li>
+                                Playing With The DNS
+                                <span>03:18</span>
+                            </li>
+                            <li>
+                                Everything About The Virtual Hosts
+                                <span>05:25</span>
+                            </li>
+                            <li>
+                                How To Monitor Your Website
+                                <span>04:18</span>
+                            </li>
+                            <li>
+                                Uncharted Beating The Last Boss
+                                <span>07:25</span>
+                            </li>
+                            <li>
+                                Ys Oath In Felghana Overview
+                                <span>03:18</span>
+                            </li>
+                            <li>
+                                Ys Series All Games Ending
+                                <span>09:11</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="videos-preview">
+                        <img src="images/video-preview.jpg" alt="">
+                        <span style="display: block;">Everything About The Virtual Hosts</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="stats" id="stats" style="padding: var(--sectionPadding);">
+            <article class="container">
+                <span class="main-title">Our Awesome Stats</span>
+                <div class="grid-columns--4">
+                    <div class="state">
+                        <i class="fa-regular fa-user"></i>
+                        <span class="number" data-target="412">0</span>
+                        <h2>Clients</h2>
+                    </div>
+                    <div class="state">
+                        <i class="fa-solid fa-code"></i>
+                        <span class="number" data-target="132">0</span>
+                        <h2>Projects</h2>
+                    </div>
+                    <div class="state">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <span class="number" data-target="52">0</span>
+                        <h2>Countries</h2>
+                    </div>
+                    <div class="state">
+                        <i class="fa-regular fa-money-bill-1"></i>
+                        <span class="number" data-target="625">0</span>
+                        <h2>Money</h2>
+                    </div>
+                </div>
             </article>
         </section>
         <script src="main.js"></script>
