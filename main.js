@@ -1,5 +1,5 @@
 var allUnits_span = document.querySelectorAll(".unit span");
-var myBirthday = new Date("Sep 14, 2022 23:18:00").getTime();
+var myBirthday = new Date("Aug 6, 2023 23:59:59").getTime();
 var myCounter = setInterval(() => {
     var currentDate = new Date().getTime();
     var reminDate = myBirthday - currentDate;
