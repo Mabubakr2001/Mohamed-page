@@ -1,85 +1,57 @@
-// Pick the skills section
-var skillsSection = document.querySelector(".skills");
+var allUnits_span = document.querySelectorAll(".unit span");
+var myBirthday = new Date("Sep 14, 2022 23:18:00").getTime();
+var myCounter = setInterval(() => {
+    var currentDate = new Date().getTime();
+    var reminDate = myBirthday - currentDate;
+    
+    var days = Math.floor(reminDate / (1000 * 60 * 60 * 24));
+    document.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
 
-// Pick all skills which is spans
-var allSkills = document.querySelectorAll(".progress span");
+    var hours = Math.floor((reminDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
 
-// Make the anonymous function do her work when I reach the skills section
+    var minutes = Math.floor((reminDate % (1000 * 60 * 60)) / (1000 * 60));
+    document.querySelector(".minutes").innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+
+    var seconds = Math.floor((reminDate % (1000 * 60)) / 1000);
+    document.querySelector(".seconds").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+
+    if (reminDate < 0){
+        clearInterval(myCounter)
+        allUnits_span.forEach(unit => unit.innerHTML = "00")
+        document.querySelector(".birthday-hint").innerHTML = "Oh, It's my birthday 🎊🎁🎈"
+        document.querySelector(".birthday-time").innerHTML = "Oh my god, I'm delighted right now, this moment is one of the happiest moments I've got in my life."
+    }
+}, 1000)
+
+
+var skillsSection_section = document.querySelector(".skills");
+var allSkills_span = document.querySelectorAll(".progress span");
+var statsSection_section = document.querySelector(".stats");
+var allNumbers_span = document.querySelectorAll(".state .number");
+var isfunctionStarted = false;
+
+function startCount(element){
+    var targetNumber = element.dataset.target;
+    var numberCounter = setInterval(() => {
+        element.textContent++;
+        if (element.textContent === targetNumber){
+            clearInterval(numberCounter)
+        }
+    }, 2000 / targetNumber)
+}
+
 window.onscroll = function () {
-    if (window.scrollY >= skillsSection.offsetTop - 2){
-        allSkills.forEach(skill => {
+    if (window.scrollY >= statsSection_section.offsetTop - 2){
+        if (!isfunctionStarted){
+            allNumbers_span.forEach(number => startCount(number))
+        }
+        isfunctionStarted = true
+    }
 
-            // Change the color of the spans to the color of the custom attribute that I've put in each span.
+    if (window.scrollY >= skillsSection_section.offsetTop - 2){
+        allSkills_span.forEach(skill => {
             skill.style.width = skill.dataset.width;
         })
     }
-};
-
-// Get the desired date in milliseconds
-var myBirthday = new Date("Aug 7, 2023 23:59:59").getTime();
-
-// Make counter to get the units
-var myCounter = setInterval(() => {
-
-    // Get the current date
-    var currentDate = new Date().getTime();
-
-    // Subtract the desired date from the current date to get the remaining date.
-    var reminDate = myBirthday - currentDate;
-
-    // Change the remaining date which is in milliseconds to be days without decimals
-    var days = Math.floor(reminDate / (1000 * 60 * 60 * 24));
-
-    // Put the days unit in the html span
-    document.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
-
-    // Get the remaining decimals from the days unit and change it to hours without decimals
-    var hours = Math.floor(reminDate % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-
-    // Put the hours unit in the html span
-    document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
-
-    // Get the remaining decimals from the hours unit and change it to minutes without decimals
-    var minutes = Math.floor(reminDate % (1000 * 60 * 60) / (1000 * 60));
-
-    // Put the minutes unit in the html span
-    document.querySelector(".minutes").innerHTML = minutes < 10 ? `0${minutes}` : minutes;
-
-    // Get the remaining decimals from the minutes unit and change it to seconds without decimals
-    var seconds = Math.floor(reminDate % (1000 * 60) / 1000);
-
-    // Put the seconds unit in the html span
-    document.querySelector(".seconds").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
-
-    // checking if the remaining date equals zero, then clear the interval which is the counter that I've made.
-    if (reminDate = 0){
-        clearInterval(myCounter)
-        document.querySelector(".birthday-hint").innerHTML = "It's my birthday 🎁🎈🎊"
-        document.querySelector(".birthday-time").innerHTML = "Oh my god. I'm delighted right now, This moment is one of the happiest moments I've ever got in my life."
-    }
-
-}, 1000);
-
-
-var statesSection = document.querySelector(".stats");
-var allNumbers = document.querySelectorAll(".state .number");
-var functionStarted = false; // The function doesn't start yet
-
-function startCount(number){
-    var targetNumber = number.dataset.target;
-    var counter = setInterval(() => {
-        number.textContent++;
-        if (number.textContent === targetNumber) {
-            clearInterval(counter)
-        };
-    }, 2000 / targetNumber);
-};
-
-window.onscroll = function () {
-    if (window.scrollY >= statesSection.offsetTop - 2){
-        if (!functionStarted) {
-            allNumbers.forEach(number => startCount(number));
-        }
-        functionStarted = true;
-    };
-};
+}
