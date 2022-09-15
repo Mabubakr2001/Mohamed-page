@@ -25,48 +25,47 @@ var birthdayCounter = setInterval(() => {
     };
 }, 1000);
 
-var upButton = document.querySelector(".go-to-up")
-var skillsSection = document.querySelector(".skills");
+var toUpbutton = document.querySelector(".go-to-up");
+var skillSection = document.querySelector(".skills");
 var allSkills = document.querySelectorAll(".progress span");
 var statsSection = document.querySelector(".stats");
-var allNumbers = document.querySelectorAll(".state .number");
-var isfunctionStarted = false;
+var allStats = document.querySelectorAll(".state .number");
+var isFunctionstarted = false;
 
-function startCount(element) {
+function startCount(element){
     var targetNumber = element.dataset.target;
     var numberCounter = setInterval(() => {
         element.textContent++;
         if (element.textContent === targetNumber){
-            clearInterval(numberCounter);
-        }
+            clearInterval(numberCounter)
+        };
     }, 1000 / targetNumber);
 };
 
-
 window.onscroll = function () {
     if (this.scrollY >= 700){
-        upButton.classList.add("show-up--button")
+        toUpbutton.classList.add("show-up--button");
     }else{
-        upButton.classList.remove("show-up--button")
+        toUpbutton.classList.remove("show-up--button");
     }
 
-    upButton.onclick = function () {
+    toUpbutton.onclick = function () {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
-        })
-    }
+        });
+    };
 
-    if (window.scrollY >= skillsSection.offsetTop - 2) {
+    if (this.scrollY >= skillSection.offsetTop - 2) {
         allSkills.forEach(skill => {
             skill.style.width = skill.dataset.width;
         });
     };
 
-    if (window.scrollY >= statsSection.offsetTop - 2){
-        if (!isfunctionStarted){
-            allNumbers.forEach(number => startCount(number));
-        }
-        isfunctionStarted = true;
+    if (this.scrollY >= statsSection.offsetTop - 2){
+        if (!isFunctionstarted) {
+            allStats.forEach(state => startCount(state));
+        };
+        isFunctionstarted = true;
     };
 };
