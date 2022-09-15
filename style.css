@@ -1710,7 +1710,7 @@ footer .container .grid-columns--4 .imgs-grid img{
     }
 
     .events .container .subscribe{
-        padding: 30px;
+        padding: 20px 15px;
         border-radius: var(--borderRadius);
         background-color: var(--subColor2);
         width: 100%;
