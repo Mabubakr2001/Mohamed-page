@@ -1013,10 +1013,6 @@ header .container nav .main-ul > li:last-child .mega-menu img{
     max-width: 450px;
 }
 
-.events .container .events-info .event{
-    flex: 1;
-}
-
 .events .container .events-info .event .event-time{
     display: flex;
     justify-content: center;
@@ -1692,6 +1688,21 @@ footer .container .grid-columns--4 .imgs-grid img{
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .events .container .events-info .event{
+        width: 100%;
+    }
+
+    .events .container .events-info .event .event-time{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .events .container .events-info .event .event-time .unit:not(:first-child){
+        margin-left: 0;
     }
 
     .events .container .events-info img{
