@@ -26,7 +26,8 @@ var birthdayCounter = setInterval(() => {
 }, 1000);
 
 
-var toUpbutton = document.querySelector(".go-to-up");
+
+var toUpbutton = document.querySelector(".go-to--up");
 var skillsSection = document.querySelector(".skills");
 var allSkills = document.querySelectorAll(".progress span");
 var statsSection = document.querySelector(".stats");
@@ -40,7 +41,7 @@ function startCount(element){
         if (element.textContent === targetNumber) {
             clearInterval(numberCounter);
         };
-    }, 1000 / targetNumber);
+    }, 1000 / targetNumber)
 };
 
 window.onscroll = function () {
@@ -57,16 +58,16 @@ window.onscroll = function () {
         });
     };
 
-    if (this.scrollY >= skillsSection.offsetTop - 2){
+    if (this.scrollY >= skillsSection.offsetTop - 2) {
         allSkills.forEach(skill => {
             skill.style.width = skill.dataset.width;
         });
     };
 
-    if (this.scrollY >= statsSection.offsetTop - 2){
+    if (this.scrollY >= statsSection.offsetTop - 2) {
         if (!isFunctionstarted) {
             allStats.forEach(state => startCount(state));
-        }
+        };
         isFunctionstarted = true;
     };
 };
