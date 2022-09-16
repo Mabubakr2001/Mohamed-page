@@ -375,7 +375,7 @@ header .container nav .main-ul > li:last-child .mega-menu img{
     animation-iteration-count: infinite;
 }
 
-.go-to-up{
+.go-to--up{
     width: 40px;
     height: 40px;
     z-index: 100;
@@ -390,7 +390,7 @@ header .container nav .main-ul > li:last-child .mega-menu img{
     display: none;
 }
 
-.go-to-up.show-up--button{
+.go-to--up.show-up--button{
     display: flex;
 }
 
