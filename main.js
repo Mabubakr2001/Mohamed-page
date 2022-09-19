@@ -1,13 +1,13 @@
-var skillsSection = document.querySelector(".skills");
-var allSkills = document.querySelectorAll(".progress span");
-var statsSection = document.querySelector(".stats");
-var allStats = document.querySelectorAll(".state .number");
-var isFunctionStarted = false;
-var toUpbutton = document.querySelector(".go-to--up");
+const skillsSection = document.querySelector(".skills");
+const allSkills = document.querySelectorAll(".progress span");
+const statsSection = document.querySelector(".stats");
+const allStats = document.querySelectorAll(".state .number");
+let isFunctionStarted = false;
+const toUpbutton = document.querySelector(".go-to--up");
 
 function startCount(element){
-    var targetNumber = element.dataset.target;
-    var numberCounter = setInterval(() => {
+    const targetNumber = element.dataset.target;
+    const numberCounter = setInterval(() => {
         element.textContent++;
         if (element.textContent === targetNumber){
             clearInterval(numberCounter);
@@ -38,23 +38,23 @@ window.onscroll = function () {
     };
 };
 
-var targetDate = new Date("Aug 6, 2023 23:59:59").getTime();
-var allUnits = document.querySelectorAll(".unit span");
+const targetDate = new Date("Aug 6, 2023 23:59:59").getTime();
+const allUnits = document.querySelectorAll(".unit span");
 
-var birthdayCounter = setInterval(() => {
-    var currentDate = new Date().getTime();
-    var reminDate = targetDate - currentDate;
+const birthdayCounter = setInterval(() => {
+    const currentDate = new Date().getTime();
+    const reminDate = targetDate - currentDate;
 
-    var days = Math.floor(reminDate / (1000 * 60 * 60 * 24));
+    const days = Math.floor(reminDate / (1000 * 60 * 60 * 24));
     document.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
 
-    var hours = Math.floor((reminDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const hours = Math.floor((reminDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
 
-    var minutes = Math.floor((reminDate % (1000 * 60 * 60)) / (1000 * 60));
+    const minutes = Math.floor((reminDate % (1000 * 60 * 60)) / (1000 * 60));
     document.querySelector(".minutes").innerHTML = minutes < 10 ? `0${minutes}` : minutes;
     
-    var seconds = Math.floor((reminDate % (1000 * 60)) / 1000);
+    const seconds = Math.floor((reminDate % (1000 * 60)) / 1000);
     document.querySelector(".seconds").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
 
     if (reminDate < 0) {
